@@ -17,12 +17,19 @@ namespace Labirinto
             InitializeComponent();
         }
 
+        string arquivo;
+
         private void Btn_OFD_Click(object sender, EventArgs e)
         {
             if(FileDialog.ShowDialog() == DialogResult.OK);
             {
-                   
+                arquivo = FileDialog.FileName;
             }
+        }
+
+        private void Btn_Encontrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

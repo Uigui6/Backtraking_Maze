@@ -57,6 +57,7 @@
             this.btn_Encontrar.TabIndex = 1;
             this.btn_Encontrar.Text = "Encontrar caminhos";
             this.btn_Encontrar.UseVisualStyleBackColor = true;
+            this.btn_Encontrar.Click += new System.EventHandler(this.Btn_Encontrar_Click);
             // 
             // label1
             // 
