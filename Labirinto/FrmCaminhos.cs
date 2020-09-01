@@ -19,8 +19,6 @@ namespace Labirinto
         }
 
         string arquivo = "";
-        int horizontal;
-        int vertical;
 
         private void Btn_OFD_Click(object sender, EventArgs e)
         {
@@ -32,18 +30,9 @@ namespace Labirinto
 
         private void Btn_Encontrar_Click(object sender, EventArgs e)
         {
-            if (arquivo == "")
-                throw new Exception("Arquivo não selecionado");
-
-            StreamReader leitor = new StreamReader(arquivo);
-
-            horizontal = int.Parse(leitor.ReadLine());
-            vertical = int.Parse(leitor.ReadLine());
-
-            for (int i = 0; ; i++)
-                {
-
-                }
+            Labirinto labirinto = new Labirinto(arquivo);
+            labirinto.MostrarLabirinto(dgvLabirinto);
+            labirinto.BuscarCaminho(dgvCaminhos);
         }
     }
 }

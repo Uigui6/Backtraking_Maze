@@ -46,14 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caminho.cs" />
     <Compile Include="FrmCaminhos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCaminhos.Designer.cs">
       <DependentUpon>FrmCaminhos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Labirinto.cs" />
+    <Compile Include="ListaSimples.cs" />
+    <Compile Include="NoLista.cs" />
+    <Compile Include="PilhaLista.cs" />
+    <Compile Include="PilhaVaziaException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack.cs" />
     <EmbeddedResource Include="FrmCaminhos.resx">
       <DependentUpon>FrmCaminhos.cs</DependentUpon>
     </EmbeddedResource>
