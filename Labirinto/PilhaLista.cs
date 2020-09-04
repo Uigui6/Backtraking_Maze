@@ -66,5 +66,10 @@ namespace Labirinto
                 while (!auxiliar.EstaVazia)
                     this.Empilhar(auxiliar.Desempilhar());
             }
+
+            public PilhaLista<Dado> Clone()
+            {
+                return (PilhaLista<Dado>) this.MemberwiseClone();
+            }
         }
 }

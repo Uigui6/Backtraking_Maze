@@ -24,5 +24,10 @@ namespace Labirinto
         {
             throw new NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            return "" + linha + ", " + coluna;
+        }
     }
 }

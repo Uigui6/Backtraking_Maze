@@ -88,7 +88,7 @@
             this.dgvLabirinto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLabirinto.Location = new System.Drawing.Point(12, 55);
             this.dgvLabirinto.Name = "dgvLabirinto";
-            this.dgvLabirinto.Size = new System.Drawing.Size(368, 417);
+            this.dgvLabirinto.Size = new System.Drawing.Size(366, 420);
             this.dgvLabirinto.TabIndex = 0;
             // 
             // dgvCaminhos
@@ -98,6 +98,7 @@
             this.dgvCaminhos.Name = "dgvCaminhos";
             this.dgvCaminhos.Size = new System.Drawing.Size(534, 420);
             this.dgvCaminhos.TabIndex = 4;
+            this.dgvCaminhos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaminhos_CellClick);
             // 
             // FrmCaminhos
             // 
