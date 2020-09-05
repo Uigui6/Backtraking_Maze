@@ -32,12 +32,24 @@ namespace Labirinto
 
         private void Btn_Encontrar_Click(object sender, EventArgs e)
         {
-            Labirinto labirinto = new Labirinto(arquivo);
+            Labirinto labirinto = new Labirinto(arquivo); 
+            
+            for (int linha = 0; linha < dgvLabirinto.RowCount; linha++)
+            {
+                for (int coluna = 0; coluna < dgvLabirinto.ColumnCount; coluna++)
+                {
+                    dgvLabirinto.Rows[linha].Cells[coluna].Style.BackColor = Color.White;
+                }
+            }
+
+            dgvCaminhos.Rows.Clear();
+            dgvCaminhos.Columns.Clear();
+            dgvCaminhos.Refresh();
+
             labirinto.ExibirLabirinto(dgvLabirinto);
             osCaminhos = labirinto.BuscarCaminho(dgvLabirinto);
             if (osCaminhos.Count != 0)
             {
-
                 if (osCaminhos.Count == 1)
                     MessageBox.Show($"Foi encontrado apenas um caminho");
                 else
@@ -46,7 +58,9 @@ namespace Labirinto
                 labirinto.ExibirCaminhos(dgvCaminhos);
             }
             else
+            {
                 MessageBox.Show("O labirinto não tem saída");
+            }
         }
 
         private void dgvCaminhos_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -42,16 +42,16 @@ namespace Labirinto
             }
         }
 
-        public void ExibirLabirinto(DataGridView dgv)
+        public void ExibirLabirinto(DataGridView dgvLabirinto)
         {
-            dgv.RowCount = vertical;
-            dgv.ColumnCount = horizontal;
+            dgvLabirinto.RowCount = vertical;
+            dgvLabirinto.ColumnCount = horizontal;
             for (int linha = 0; linha < vertical; linha++)
             {
                 for (int coluna = 0; coluna < horizontal; coluna++)
                 {
-                    dgv.Columns[coluna].Width = 20;
-                    dgv.Rows[linha].Cells[coluna].Value = matriz[linha, coluna];
+                    dgvLabirinto.Columns[coluna].Width = 20;
+                    dgvLabirinto.Rows[linha].Cells[coluna].Value = matriz[linha, coluna];
                 }
             }
             Application.DoEvents();
@@ -132,19 +132,19 @@ namespace Labirinto
             return listaCaminho;
         }
 
-        public void ExibirCaminhos(DataGridView dgv)
+        public void ExibirCaminhos(DataGridView dgvCaminhos)
         {
             int i = 0;
-            dgv.ColumnCount = 100;
-            dgv.RowCount = listaCaminho.Count;
+            dgvCaminhos.ColumnCount = 100;
+            dgvCaminhos.RowCount = listaCaminho.Count;
             foreach (PilhaLista<Caminho> caminho in listaCaminho)
             {
                 PilhaLista<Caminho> caminhoClone = caminho.Clone();
                 for (int j = caminho.Tamanho - 1; j >= 0; j--)
                 {
-                    dgv.Columns[j].Width = 50;
+                    dgvCaminhos.Columns[j].Width = 50;
                     Caminho umCaminho = caminhoClone.Desempilhar();
-                    dgv.Rows[i].Cells[j].Value = umCaminho;
+                    dgvCaminhos.Rows[i].Cells[j].Value = umCaminho;
                 }
                 i++;
             }
